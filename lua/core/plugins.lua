@@ -20,6 +20,8 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
+
+  use { "turbio/bracey.vim", run = "npm install --prefix server" }
   
   -- Completion
   use 'hrsh7th/nvim-cmp'
