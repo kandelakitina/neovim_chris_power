@@ -13,16 +13,42 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  --Addons
+
+  -- Package managers
   use 'wbthomason/packer.nvim'
-  use 'ellisonleao/gruvbox.nvim'
+  use 'williamboman/mason.nvim'
+
+  -- Usability
   use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
+  use 'tpope/vim-unimpaired'
+  use 'fedepujol/move.nvim'
+  
+  use { 
+    "turbio/bracey.vim", 
+    run = "npm install --prefix server" 
+  }
+  
+  use {
+    "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+  }
+
+  use 'kylechui/nvim-surround'
+
+  -- Visuals
+  use 'ellisonleao/gruvbox.nvim'
+  use 'nvim-tree/nvim-web-devicons'
+    
+  -- LSP and grammar
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig'
+
+  -- Formatting and linting
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'jayp0521/mason-null-ls.nvim'
   use 'nvim-treesitter/nvim-treesitter'
 
-  use { "turbio/bracey.vim", run = "npm install --prefix server" }
-  
   -- Completion
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -30,15 +56,7 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
 
-  -- Formatting and linting
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use 'jayp0521/mason-null-ls.nvim'
-
-  use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig"
-  }
+  -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
