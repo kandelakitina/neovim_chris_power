@@ -21,25 +21,35 @@ return require('packer').startup(function(use)
   -- Usability
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
+  use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-unimpaired'
+  use 'kylechui/nvim-surround'
   use 'fedepujol/move.nvim'
   
+  use { 'phaazon/hop.nvim', branch = 'v2' }
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+  
   use { 
-    "turbio/bracey.vim", 
-    run = "npm install --prefix server" 
+    'turbio/bracey.vim', 
+    run = 'npm install --prefix server' 
   }
   
   use {
-    "windwp/nvim-autopairs",
+    'windwp/nvim-autopairs',
       config = function() require("nvim-autopairs").setup {} end
   }
+  use { 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' }
 
-  use 'kylechui/nvim-surround'
 
   -- Visuals
   use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-web-devicons'
-    
+
   -- LSP and grammar
   use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
@@ -60,6 +70,10 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use { 
+    'nvim-telescope/telescope-fzf-native.nvim', 
+    run = "make" 
   }
 
   -- Automatically set up your configuration after cloning packer.nvim

@@ -37,3 +37,6 @@ vim.keymap.set('v', '<A-down>', ':MoveBlock(1)<CR>')
 vim.keymap.set('v', '<A-up>', ':MoveBlock(-1)<CR>')
 vim.keymap.set('v', '<A-left>', ':MoveHBlock(-1)<CR>')
 vim.keymap.set('v', '<A-right>', ':MoveHBlock(1)<CR>')
+
+-- PackerSync
+vim.keymap.set('n', '<leader>ps', ':PackerSync<CR>')
