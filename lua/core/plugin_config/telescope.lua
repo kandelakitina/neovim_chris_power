@@ -1,3 +1,9 @@
+-- import plugin safely
+local setup, telescope = pcall(require, "telescope.builtin")
+if not setup then
+  return
+end
+
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<c-p>', builtin.find_files, {})

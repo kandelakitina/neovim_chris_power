@@ -1,4 +1,8 @@
-
+-- import plugin safely
+local setup, cmp_nvim = pcall(require, "cmp_nvim_lsp")
+if not setup then
+  return
+end
 
 local on_attach = function(_, _)
 	vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
