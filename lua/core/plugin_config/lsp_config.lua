@@ -1,12 +1,4 @@
-require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"sumneko_lua",
-		"emmet_ls",
-		"tailwindcss",
-		"ruby_ls"
-	}
-})
+
 
 local on_attach = function(_, _)
 	vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
@@ -39,3 +31,4 @@ require'lspconfig'.ruby_ls.setup{
 	on_attach = on_attach,
 	capabilities = capabilities, 
 }
+
