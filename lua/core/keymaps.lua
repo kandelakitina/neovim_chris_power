@@ -42,3 +42,9 @@ vim.keymap.set('n', '<leader>ps', ':PackerSync<CR>')
 
 -- Buffers management (uses close-buffers.nvim plugin)
 vim.keymap.set('n', '<leader>q', ':Bdelete<CR>')
+
+-- Windows
+vim.keymap.set('n', '<A-q>', ':close<CR>')
+
+-- Lazygit
+vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { silent = true })

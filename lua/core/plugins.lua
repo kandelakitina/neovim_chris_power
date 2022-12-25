@@ -18,8 +18,36 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'williamboman/mason.nvim'
 
+  -- File explorer
+  use {
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
+  use 'airblade/vim-rooter' -- autochange project root if there's git
+
+  -- Windows picker
+  use {
+    's1n7ax/nvim-window-picker',
+    tag = 'v1.*'
+  }
+
+  -- Auto resize windows
+  use { 
+    "beauwilliams/focus.nvim", 
+    config = function() 
+      require("focus").setup() 
+    end 
+  }
+
+  -- Git
+  use 'kdheepak/lazygit.nvim'
+
   -- Usability
-  use 'nvim-tree/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
   use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-unimpaired'
