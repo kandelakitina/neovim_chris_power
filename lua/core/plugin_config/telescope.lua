@@ -5,8 +5,14 @@ if not setup then
 end
 
 local builtin = require('telescope.builtin')
+local keyset = vim.keymap.set
 
-vim.keymap.set('n', '<c-p>', builtin.find_files, {})
-vim.keymap.set('n', '<Space>fo', builtin.oldfiles, {})
-vim.keymap.set('n', '<Space>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<Space>fh', builtin.help_tags, {})
+keyset('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+keyset('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind [G]rep' })
+keyset('n', '<leader>fs', builtin.git_status, { desc = '[F]ind git [S]tatus' })
+keyset('n', '<leader>fo', builtin.oldfiles, { desc = '[F]ind [O]pened' })
+keyset('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [B]uffers' })
+keyset('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind [W]ord' })
+keyset('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
+keyset('n', '<leader>fc', builtin.commands, { desc = '[F]ind [C]ommands' })
+keyset('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
