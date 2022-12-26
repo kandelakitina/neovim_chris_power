@@ -13,6 +13,3 @@ require("neo-tree").setup({
     ["s"] = "vsplit_with_window_picker",
   }
 })
-
--- Toggle NeoTree
-vim.keymap.set('n', '<c-n>', ':NeoTreeRevealToggle<CR>', { silent = true })
