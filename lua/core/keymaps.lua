@@ -60,3 +60,7 @@ vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { silent = true })
 
 -- Toggle NeoTree
 vim.keymap.set('n', '<C-E>', ':NeoTreeRevealToggle<CR>', { silent = true })
+
+-- Bracey
+vim.keymap.set('n', '<leader>bo', ':Bracey<CR>', { silent = true })
+vim.keymap.set('n', '<leader>br', ':BraceyReload<CR>', { silent = true })
