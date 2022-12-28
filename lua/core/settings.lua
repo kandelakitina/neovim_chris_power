@@ -14,3 +14,5 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
+
+vim.g.bracey_refresh_on_save = 1
