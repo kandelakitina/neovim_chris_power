@@ -74,7 +74,7 @@ vim.keymap.set('n', '<A-b>', '<Plug>(comment_toggle_linewise_current)<bar>:Brace
 vim.keymap.set('v', '<A-b>', '<Plug>(comment_toggle_linewise_visual)<bar>:BraceyReload<CR><bar>gv')
 
 -- Luasnip binding for jumping or expanding (no need to lua code in completions.lua)
-vim.keymap.set('i', '<TAB>', '<Plug>luasnip-expand-or-jump')
-vim.keymap.set('i', '<S-TAB>', "<cmd>lua require'luasnip'.jump(-1)<Cr>")
-vim.keymap.set('s', '<TAB>', "<cmd>lua require('luasnip').jump(1)<Cr>")
-vim.keymap.set('s', '<S-TAB>', "<cmd>lua require('luasnip').jump(-1)<Cr>")
+-- vim.keymap.set('i', '<TAB>', '<Plug>luasnip-expand-or-jump')
+-- vim.keymap.set('i', '<S-TAB>', "<cmd>lua require'luasnip'.jump(-1)<Cr>")
+-- vim.keymap.set('s', '<TAB>', "<cmd>lua require('luasnip').jump(1)<Cr>")
+-- vim.keymap.set('s', '<S-TAB>', "<cmd>lua require('luasnip').jump(-1)<Cr>")
