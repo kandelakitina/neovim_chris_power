@@ -62,8 +62,8 @@ vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { silent = true })
 vim.keymap.set('n', '<C-E>', ':NeoTreeRevealToggle<CR>', { silent = true })
 
 -- Bracey
-vim.keymap.set('n', '<leader>bo', ':Bracey<CR>', { silent = true })
-vim.keymap.set('n', '<leader>br', ':BraceyReload<CR>', { silent = true })
+vim.keymap.set('n', '<leader>b', ':Bracey<CR>', { silent = true })
+vim.keymap.set('n', '<A-r>', ':BraceyReload<CR>', { silent = true })
 
 -- Comment current line or selected lines
 vim.keymap.set('n', '<A-c>', '<Plug>(comment_toggle_linewise_current)')
@@ -73,3 +73,8 @@ vim.keymap.set('v', '<A-c>', '<Plug>(comment_toggle_linewise_visual)<bar>gv') --
 vim.keymap.set('n', '<A-b>', '<Plug>(comment_toggle_linewise_current)<bar>:BraceyReload<CR>')
 vim.keymap.set('v', '<A-b>', '<Plug>(comment_toggle_linewise_visual)<bar>:BraceyReload<CR><bar>gv')
 
+-- Luasnip binding for jumping or expanding (no need to lua code in completions.lua)
+vim.keymap.set('i', '<TAB>', '<Plug>luasnip-expand-or-jump')
+vim.keymap.set('i', '<S-TAB>', "<cmd>lua require'luasnip'.jump(-1)<Cr>")
+vim.keymap.set('s', '<TAB>', "<cmd>lua require('luasnip').jump(1)<Cr>")
+vim.keymap.set('s', '<S-TAB>', "<cmd>lua require('luasnip').jump(-1)<Cr>")
