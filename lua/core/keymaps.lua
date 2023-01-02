@@ -19,9 +19,6 @@ vim.keymap.set('n', '<A-q>', ':close<CR>')
 vim.keymap.set('n', '<A-h>', ':split<CR>')
 vim.keymap.set('n', '<A-v>', ':vsplit<CR>')
 
--- Source init.lua
-vim.keymap.set('n', '<A-q>', ':close<CR>')
-
 -- Ctrl-E / A in insert mode to go to the end / start of the line 
 vim.keymap.set('i', '<C-E>', '<ESC>A')
 vim.keymap.set('i', '<C-A>', '<ESC>I')
@@ -63,7 +60,7 @@ vim.keymap.set('n', '<C-E>', ':NeoTreeRevealToggle<CR>', { silent = true })
 
 -- Bracey
 vim.keymap.set('n', '<leader>b', ':Bracey<CR>', { silent = true })
-vim.keymap.set('n', '<A-r>', ':BraceyReload<CR>', { silent = true })
+vim.keymap.set('n', '<leader>r', ':BraceyReload<CR>', { silent = true })
 
 -- Comment current line or selected lines
 vim.keymap.set('n', '<A-c>', '<Plug>(comment_toggle_linewise_current)')

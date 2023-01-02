@@ -116,6 +116,10 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jayp0521/mason-null-ls.nvim'
   use 'nvim-treesitter/nvim-treesitter'
+  use { -- Additional text objects via treesitter
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  }
 
   -- Completion
   use 'hrsh7th/nvim-cmp'
