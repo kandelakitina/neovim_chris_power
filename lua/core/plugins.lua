@@ -9,7 +9,6 @@ local ensure_packer = function()
   end
   return false
 end
-
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
@@ -52,6 +51,7 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-sleuth'
+  use 'tpope/vim-repeat'
   use 'kylechui/nvim-surround'
   use 'fedepujol/move.nvim'
   use { 'phaazon/hop.nvim', branch = 'v2' }
