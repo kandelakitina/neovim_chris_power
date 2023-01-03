@@ -1,14 +1,14 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.keymap.set('n', '<ESC>', ':nohlsearch<Bar>:echo<CR>')
+vim.keymap.set('n', '<ESC>', ':nohlsearch<CR>', { silent = true })
 
 -- Buffers management (uses close-buffers.nvim plugin)
-vim.keymap.set('n', '<C-q>', ':Bdelete<CR>')
-vim.keymap.set('n', '<C-h>', ':BufferLineCyclePrev<CR>')
-vim.keymap.set('n', '<C-left>', ':BufferLineCyclePrev<CR>')
-vim.keymap.set('n', '<C-l>', ':BufferLineCycleNext<CR>')
-vim.keymap.set('n', '<C-right>', ':BufferLineCycleNext<CR>')
+vim.keymap.set('n', '<C-q>', ':Bdelete<CR>', { silent = true })
+vim.keymap.set('n', '<C-h>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '<C-left>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '<C-l>', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<C-right>', ':BufferLineCycleNext<CR>', { silent = true })
 
 -- Save and quit
 vim.keymap.set('n', '<leader>w', ':w<CR>')
@@ -59,8 +59,8 @@ vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { silent = true })
 vim.keymap.set('n', '<C-E>', ':NeoTreeRevealToggle<CR>', { silent = true })
 
 -- Bracey
-vim.keymap.set('n', '<leader>b', ':Bracey<CR>', { silent = true })
-vim.keymap.set('n', '<leader>r', ':BraceyReload<CR>', { silent = true })
+vim.keymap.set('n', '<leader>bo', ':Bracey<CR>', { silent = true })
+vim.keymap.set('n', '<leader>br', ':BraceyReload<CR>', { silent = true })
 
 -- Comment current line or selected lines
 vim.keymap.set('n', '<A-c>', '<Plug>(comment_toggle_linewise_current)')
@@ -75,3 +75,13 @@ vim.keymap.set('v', '<A-b>', '<Plug>(comment_toggle_linewise_visual)<bar>:Bracey
 -- vim.keymap.set('i', '<S-TAB>', "<cmd>lua require'luasnip'.jump(-1)<Cr>")
 -- vim.keymap.set('s', '<TAB>', "<cmd>lua require('luasnip').jump(1)<Cr>")
 -- vim.keymap.set('s', '<S-TAB>', "<cmd>lua require('luasnip').jump(-1)<Cr>")
+
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)

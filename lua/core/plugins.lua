@@ -46,11 +46,12 @@ return require('packer').startup(function(use)
 
   -- Git
   use 'kdheepak/lazygit.nvim'
+  use 'lewis6991/gitsigns.nvim'
 
   -- Usability
   use 'nvim-lualine/lualine.nvim'
-  use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-unimpaired'
+  use 'tpope/vim-sleuth'
   use 'kylechui/nvim-surround'
   use 'fedepujol/move.nvim'
   use { 'phaazon/hop.nvim', branch = 'v2' }
