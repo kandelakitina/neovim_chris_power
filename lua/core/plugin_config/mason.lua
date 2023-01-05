@@ -11,7 +11,10 @@ require("mason-lspconfig").setup({
 		"sumneko_lua",
 		"emmet_ls",
 		"tailwindcss",
-		"ruby_ls"
+		"ruby_ls",
+    "html",
+    "cssls",
+    "tsserver",
 	}
 })
 

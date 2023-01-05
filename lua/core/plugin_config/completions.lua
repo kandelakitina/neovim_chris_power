@@ -4,6 +4,10 @@ if not setup then
   return
 end
 
+local setup, luasnip = pcall(require, "luasnip")
+if not setup then
+  return
+end
 
 local cmp = require("cmp")
 local luasnip = require("luasnip")
@@ -17,7 +21,7 @@ cmp.setup({
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-o>"] = cmp.mapping.complete(),
+		["<C-space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
@@ -65,7 +69,7 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 			}, {
-		{ name = "path" }, 		-- Does not seem to work
+		{ name = "path" }, 	
 			}, {
 		{ name = "luasnip" },
 			}, {
