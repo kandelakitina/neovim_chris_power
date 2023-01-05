@@ -89,7 +89,12 @@ return require('packer').startup(function(use)
     'windwp/nvim-autopairs',
       config = function() require("nvim-autopairs").setup {} end
   }
-  use { 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' }
+  use { 'windwp/nvim-ts-autotag', 
+    after = 'nvim-treesitter',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end 
+  }
 
   -- Visuals
   use 'ellisonleao/gruvbox.nvim'
@@ -112,6 +117,7 @@ return require('packer').startup(function(use)
       require('fidget').setup()
     end
   }
+  use({ "glepnir/lspsaga.nvim", branch = "main" }) 
 
   -- Formatting and linting
   use 'jose-elias-alvarez/null-ls.nvim'
