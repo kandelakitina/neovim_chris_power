@@ -55,8 +55,10 @@ return require('packer').startup(function(use)
   use 'kylechui/nvim-surround'
   use 'fedepujol/move.nvim'
   use { 'phaazon/hop.nvim', branch = 'v2' }
-  use 'NvChad/nvim-colorizer.lua'  
   use 'famiu/bufdelete.nvim'
+
+  -- Colorizer and color picker
+  use 'uga-rosa/ccc.nvim'
   
   -- Highlights range, entered into command line
   use {

@@ -85,3 +85,10 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
+--- CCC Colorpicker
+vim.keymap.set('n', '<leader>cp', ':CccPick<CR>', { silent = true }) -- pick color
+vim.keymap.set('n', '<leader>cc', ':CccConvert<CR>', { silent = true }) -- convert (RGB/HSL/HEX)
+vim.keymap.set('n', '<leader>ct', ':CccHighlighterToggle<CR>', { silent = true }) -- toggle highlighting
+
+
