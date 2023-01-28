@@ -19,7 +19,7 @@ local on_attach = function(_, _)
   vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
   vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
   vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-  vim.keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
+  vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
 
 	vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
 	vim.keymap.set('n', 'C-k', vim.lsp.buf.signature_help, {})
@@ -71,6 +71,11 @@ require'lspconfig'.tailwindcss.setup{
 }
 
 require'lspconfig'.ruby_ls.setup{ 
+	on_attach = on_attach,
+	capabilities = capabilities, 
+}
+
+require'lspconfig'.tsserver.setup {
 	on_attach = on_attach,
 	capabilities = capabilities, 
 }
