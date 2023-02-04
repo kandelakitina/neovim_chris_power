@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
   use 'fedepujol/move.nvim'
   use { 'phaazon/hop.nvim', branch = 'v2' }
   use 'famiu/bufdelete.nvim'
+  
 
   -- Colorizer and color picker
   use 'uga-rosa/ccc.nvim'
@@ -67,6 +68,12 @@ return require('packer').startup(function(use)
     config = function()
       require('range-highlight').setup()
     end
+  }
+
+  -- Firenvim (Nvim in the Browser)
+  use {
+      'glacambre/firenvim',
+      run = function() vim.fn['firenvim#install'](0) end 
   }
 
   -- Registers menu
