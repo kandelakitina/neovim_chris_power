@@ -17,6 +17,10 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'williamboman/mason.nvim'
 
+  -- Color themes
+  use 'ellisonleao/gruvbox.nvim'
+  use "rebelot/kanagawa.nvim"
+
   -- File explorer
   use {
   "nvim-neo-tree/neo-tree.nvim",
@@ -36,11 +40,17 @@ return require('packer').startup(function(use)
   }
 
   -- Auto resize windows
-  use { 
-    "beauwilliams/focus.nvim", 
-    config = function() 
-      require("focus").setup() 
-    end 
+  use { "anuvyklack/windows.nvim",
+   requires = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim"
+   },
+   config = function()
+      vim.o.winwidth = 10
+      vim.o.winminwidth = 10
+      vim.o.equalalways = false
+      require('windows').setup()
+   end
   }
 
   -- Git
@@ -105,8 +115,8 @@ return require('packer').startup(function(use)
     end 
   }
 
+
   -- Visuals
-  use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-web-devicons'
   use {
     'akinsho/bufferline.nvim', 

@@ -1,4 +1,4 @@
-require("core.plugin_config.gruvbox")
+require("core.plugin_config.colorscheme")
 require("core.plugin_config.lualine")
 require("core.plugin_config.neo-tree")
 require("core.plugin_config.treesitter")
