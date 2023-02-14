@@ -8,7 +8,7 @@ require("mason").setup()
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"sumneko_lua",
+		"lua_ls",
 		"emmet_ls",
 		"tailwindcss",
 		"ruby_ls",

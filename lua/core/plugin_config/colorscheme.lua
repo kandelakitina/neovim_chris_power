@@ -1,12 +1,12 @@
--- Gruvbox
-----------
-local setup, gruvbox = pcall(require, "gruvbox")
-if not setup then
-  return
-end
+-- -- Gruvbox
+-- ----------
+-- local setup, gruvbox = pcall(require, "gruvbox")
+-- if not setup then
+--   return
+-- end
 
-require("gruvbox").setup()
-vim.cmd("colorscheme gruvbox")
+-- require("gruvbox").setup()
+-- vim.cmd("colorscheme gruvbox")
 
 -- kanagawa
 -----------

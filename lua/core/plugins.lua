@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
 
   -- Color themes
-  use 'ellisonleao/gruvbox.nvim'
+  -- use 'ellisonleao/gruvbox.nvim'
   use "rebelot/kanagawa.nvim"
 
   -- File explorer

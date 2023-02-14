@@ -92,3 +92,6 @@ vim.keymap.set('n', '<leader>cc', ':CccConvert<CR>', { silent = true }) -- conve
 vim.keymap.set('n', '<leader>ct', ':CccHighlighterToggle<CR>', { silent = true }) -- toggle highlighting
 
 
+--- New lines (using unimpaired bindings)
+vim.keymap.set('n', '<A-k>', ":<c-u>put!=repeat([''],v:count)<bar>']+1<cr>", { silent = true })
+vim.keymap.set('n', '<A-j>', ":<c-u>put =repeat([''],v:count)<bar>'[-1<cr>", { silent = true }) 
