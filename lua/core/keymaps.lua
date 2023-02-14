@@ -94,4 +94,8 @@ vim.keymap.set('n', '<leader>ct', ':CccHighlighterToggle<CR>', { silent = true }
 
 --- New lines (using unimpaired bindings)
 vim.keymap.set('n', '<A-k>', ":<c-u>put!=repeat([''],v:count)<bar>']+1<cr>", { silent = true })
-vim.keymap.set('n', '<A-j>', ":<c-u>put =repeat([''],v:count)<bar>'[-1<cr>", { silent = true }) 
+vim.keymap.set('n', '<A-j>', ":<c-u>put =repeat([''],v:count)<bar>'[-1<cr>", { silent = true })
+
+--- Yank all buffer
+vim.keymap.set('n', '<leader>aa', ":%y+<cr>")
+
